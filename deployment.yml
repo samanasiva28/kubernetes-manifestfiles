@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+   name: replica-1
+spec:
+  replicas: 3
+  selectors:
+     Matchlabels:
+        project: swiggy
+  template:
+    matadata:
+       labels:
+         project: swiggy
+  spec:
+    containers:
+       - name: cont-1
+         image: shaikmustafa/cycle
+         ports:
+           - containerPort: 80
+ 
