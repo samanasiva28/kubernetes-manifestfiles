@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Replicaset
+metadata: 
+   name: replica-1
+spec:
+  replicas: 3
+  selectors:
+     project: swiggy
+  template:
+    matadata:
+       labels:
+         project: swiggy
+  spec:
+    containers:
+       - name: cont-1
+         image: shaikmustafa/cycle
+         ports:
+           - containerPort: 80
+ 
