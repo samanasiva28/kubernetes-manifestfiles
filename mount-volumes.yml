@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deplyment-1
+spec:
+  replicas: 3
+  selectors:
+    Mtachlabels:
+       project: swiggy
+
+    template:
+      metadata:
+        labels:
+          project: swiggy
+
+    spec:
+      containers:
+         - name: cont-1
+           image: shaikmustafa/mygame
+           volumeMounts:
+               - name: volume-1
+                 mountPath: "/etc/docker"
+
+    volumes:
+      - name: volume-1
+        emptyDir: {}
