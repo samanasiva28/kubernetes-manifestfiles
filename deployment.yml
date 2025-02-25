@@ -4,8 +4,8 @@ metadata:
    name: replica-1
 spec:
   replicas: 3
-  selectors:
-     Matchlabels:
+  selector:
+     MatchLabels:
         project: swiggy
   template:
     matadata:
